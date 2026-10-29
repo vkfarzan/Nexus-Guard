@@ -2,6 +2,11 @@
 
 Nexus Guard is a small Windows utility that pauses the Hello Nexus application while selected games are running, then starts it again after those games close.
 
+## Why Nexus Guard?
+
+Hello Nexus can consume significant CPU resources in the background on some systems. When a game is CPU-bound, that extra load can compete with the game and contribute to frame-time spikes or lower 1% low FPS. Nexus Guard temporarily stops Nexus while your selected games run, then starts it again when you finish.
+
+The impact depends on your hardware, game, and Nexus workload; improvements are not guaranteed. Compare frame times and 1% lows with and without Nexus running to see whether it helps on your system.
 ## Features
 
 - Monitor a list of game executables and restore Nexus when the last monitored game closes, if Nexus was running before it was paused.
@@ -43,5 +48,6 @@ Nexus Guard stores its watch list and settings locally. It does not include anal
 ## License
 
 MIT; see [LICENSE](LICENSE). Nexus Guard is an independent project and is not affiliated with Hello Nexus or Valve.
+
 
 
