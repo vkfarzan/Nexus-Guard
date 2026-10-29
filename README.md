@@ -1,5 +1,7 @@
 # Nexus Guard
 
+[English](README.md) · [فارسی](README.fa.md)
+
 Nexus Guard is a small Windows utility that pauses the Hello Nexus application while selected games are running, then starts it again after those games close.
 
 ## Why Nexus Guard?
@@ -48,6 +50,7 @@ Nexus Guard stores its watch list and settings locally. It does not include anal
 ## License
 
 MIT; see [LICENSE](LICENSE). Nexus Guard is an independent project and is not affiliated with Hello Nexus or Valve.
+
 
 
 
