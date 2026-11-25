@@ -49,7 +49,7 @@ internal static class PortableHost {
       if(args.Length>0 && args[0]=="--self-test") return File.Exists(scriptPath)?0:1;
       Environment.SetEnvironmentVariable("NEXUS_GUARD_APP_PATH",Assembly.GetExecutingAssembly().Location,EnvironmentVariableTarget.Process);
       var state=InitialSessionState.CreateDefault(); state.ExecutionPolicy=Microsoft.PowerShell.ExecutionPolicy.Bypass;
-      using(var runspace=RunspaceFactory.CreateRunspace(state)) { runspace.ApartmentState=System.Threading.ApartmentState.STA; runspace.Open(); using(var ps=PowerShell.Create()) { ps.Runspace=runspace; ps.AddCommand(scriptPath); ps.Invoke(); if(ps.HadErrors) MessageBox.Show(ps.Streams.Error[0].ToString(),"Nexus Guard"); } }
+      using(var runspace=RunspaceFactory.CreateRunspace(state)) { runspace.ApartmentState=System.Threading.ApartmentState.STA; runspace.Open(); using(var ps=PowerShell.Create()) { ps.Runspace=runspace; ps.AddCommand(scriptPath); ps.Invoke(); if(ps.HadErrors && ps.Streams.Error.Count > 0) MessageBox.Show(ps.Streams.Error[0].ToString(),"Nexus Guard"); } }
       return 0;
     } catch(Exception ex) { MessageBox.Show(ex.Message,"Nexus Guard"); return 1; }
   }
